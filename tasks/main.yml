@@ -1,0 +1,11 @@
+---
+# tasks file for apt-cache-client
+
+- name: Installing apt-proxy check script
+  copy: src=detect-http-proxy.sh dest=/usr/local/bin/detect-http-proxy.sh mode=755 owner=root
+  when: ansible_os_family == "Debian"
+
+- name: Installing apt-proxy 30detectproxy
+  copy: src=30detectproxy dest=/etc/apt/apt.conf.d/30detectproxy mode=644 owner=root
+  when: ansible_os_family == "Debian"
+
