@@ -8,4 +8,3 @@
 - name: Installing apt-proxy 30detectproxy
   copy: src=30detectproxy dest=/etc/apt/apt.conf.d/30detectproxy mode=644 owner=root
   when: ansible_os_family == "Debian"
-
