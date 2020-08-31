@@ -2,7 +2,6 @@ galaxy_info:
   role_name: apt-cacher-client
   author: silviu
   description: apt-cacher-ng client setup
-  company: your company (optional)
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -15,7 +14,7 @@ galaxy_info:
   # - GPL-3.0-only
   # - Apache-2.0
   # - CC-BY-4.0
-  license: GPLv2
+  license: GPL-2.0-or-later
 
   min_ansible_version: 2.7
 
