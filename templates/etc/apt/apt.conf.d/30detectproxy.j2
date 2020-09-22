@@ -7,7 +7,7 @@ Acquire::Retries 0;
 # undocumented feature which was found in the source. It should be an absolute
 # path to the program, no arguments are allowed. stdout contains the proxy
 # server, stderr is shown (in stderr) but ignored by APT
-Acquire::http::ProxyAutoDetect "/usr/local/bin/detect-http-proxy.sh";
+Acquire::http::ProxyAutoDetect "{{ aptcacher_detect_script_path }}/detect-http-proxy.sh";
 
 # Override the default proxy, DIRECT causes a direct connection to be used
 Acquire::http::Proxy {

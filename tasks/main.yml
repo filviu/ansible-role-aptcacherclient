@@ -1,10 +1,14 @@
 ---
-# tasks file for apt-cache-client
-
-- name: Installing apt-proxy check script
-  copy: src=detect-http-proxy.sh dest=/usr/local/bin/detect-http-proxy.sh mode=755 owner=root
-  when: ansible_os_family == "Debian"
+- name: Setup proxy check script
+  template:
+    src: detect-http-proxy.sh.j2
+    dest: "{{ aptcacher_detect_script_path }}/detect-http-proxy.sh"
+    owner: root
+    mode: 0755
 
 - name: Installing apt-proxy 30detectproxy
-  copy: src=30detectproxy dest=/etc/apt/apt.conf.d/30detectproxy mode=644 owner=root
-  when: ansible_os_family == "Debian"
+  template: 
+    src: etc/apt/apt.conf.d/30detectproxy.j2
+    dest: /etc/apt/apt.conf.d/30detectproxy 
+    owner: root
+    mode: 0644 
