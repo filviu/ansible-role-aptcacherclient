@@ -1,9 +1,7 @@
 ---
 
-# In theory multiple proxies are supported but currently this role can only
-# setup one
-aptcacher_server_host: "apt-cache"
-aptcacher_server_port: "3142"
+aptcacher_servers:
+ - "apt-cache:3142"
 
 aptcacher_detect_script_path: "/usr/local/bin"
 

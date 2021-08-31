@@ -19,7 +19,9 @@ show_proxy_messages=0
 # be available on the top. If no proxy is available, a direct connection will
 # be used
 try_proxies=(
-{{ aptcacher_server_host }}:{{ aptcacher_server_port }}
+{% for item in aptcacher_servers %}
+    {{ item }}
+{% endfor %}
 )
 
 print_msg() {

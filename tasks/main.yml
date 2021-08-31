@@ -1,14 +1,19 @@
 ---
-- name: Setup proxy check script
+- name: setup | dependencies
+  apt:
+    pkg:
+      - netcat
+
+- name: setup | proxy check script
   template:
     src: detect-http-proxy.sh.j2
     dest: "{{ aptcacher_detect_script_path }}/detect-http-proxy.sh"
     owner: root
     mode: 0755
 
-- name: Installing apt-proxy 30detectproxy
-  template: 
+- name: setup | 30detectproxy apt-proxy config file
+  template:
     src: etc/apt/apt.conf.d/30detectproxy.j2
-    dest: /etc/apt/apt.conf.d/30detectproxy 
+    dest: /etc/apt/apt.conf.d/30detectproxy
     owner: root
-    mode: 0644 
+    mode: 0644
