@@ -34,7 +34,7 @@ This role needs the netcat package (and it will install it).
 - hosts: all
 
 roles:
-      - silviuvulcan.aptcacherclient
+      - filviu.aptcacherclient
           aptcacher_servers:
             - "apt-cache:3142"
           aptcacher_detect_script_path: "/usr/local/bin"

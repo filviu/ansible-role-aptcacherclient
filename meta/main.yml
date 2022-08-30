@@ -5,7 +5,7 @@ galaxy_info:
   description: apt-cacher-ng client setup with auto detection of proxy
   license: "license (BSD, MIT)"
 
-  min_ansible_version: 2.7
+  min_ansible_version: "2.7"
 
   platforms:
     - name: Debian

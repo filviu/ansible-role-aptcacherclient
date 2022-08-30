@@ -1,18 +1,18 @@
 ---
 - name: setup | dependencies
-  apt:
+  ansible.builtin.apt:
     pkg:
       - netcat
 
 - name: setup | proxy check script
-  template:
+  ansible.builtin.template:
     src: detect-http-proxy.sh.j2
     dest: "{{ aptcacher_detect_script_path }}/detect-http-proxy.sh"
     owner: root
     mode: 0755
 
 - name: setup | 30detectproxy apt-proxy config file
-  template:
+  ansible.builtin.template:
     src: etc/apt/apt.conf.d/30detectproxy.j2
     dest: /etc/apt/apt.conf.d/30detectproxy
     owner: root
